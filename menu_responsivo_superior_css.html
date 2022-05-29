@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!--
+    Copyright 2022 Murilo Rocha
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    https://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<!--
+    Código para a demonstração do desenvolvimento de um menu superior responsivo com o uso de HTML e CSS.
+-->
+<html lang="pt-BR">
+    <head>
+        <title>Menu superior responsivo com CSS</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            html, body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            /* Mobile first - Telas pequenas */
+            nav#menu_superior_responsivo, nav#menu_superior_responsivo ul, nav#menu_superior_responsivo ul li {
+                margin: 0;
+                padding: 0;
+                line-height: 0;
+            }
+            nav#menu_superior_responsivo ul li {
+                list-style-type: none;
+            }           
+            nav#menu_superior_responsivo ul li a {
+                display: block;
+                text-align: center;
+                text-decoration: none;
+                padding: 1.1em;
+                font-size: 0.85em;
+                font-family: arial, helvetica, sans-serif;
+                background-color: #0d5ea1;
+                color: #fff;
+            }
+            nav#menu_superior_responsivo ul li a:hover {
+                background-color: #4b98d8;
+            }
+            /* Telas maiores que 600px */
+            @media only screen and (min-width: 600px) {
+                nav#menu_superior_responsivo {
+                    text-align: center;
+                    background-color: #0d5ea1;
+                }
+                nav#menu_superior_responsivo ul {
+                    display: inline-block;
+                }
+                nav#menu_superior_responsivo ul li {
+                    float: left;
+                }
+                nav#menu_superior_responsivo ul li a {
+                    padding: 1.15em;
+                    font-size: 0.95em;
+                }
+            }
+            /* Telas maiores que 768px */
+            @media only screen and (min-width: 768px) {
+                nav#menu_superior_responsivo ul li a {
+                    padding: 1.25em;
+                }
+            }
+            /* Telas maiores que 1024px */
+            @media only screen and (min-width: 1024px) {
+                nav#menu_superior_responsivo ul li a {
+                    padding: 1.5em;
+                    font-size: 1em;
+                }
+            }   
+        </style>
+    </head>
+    <body>
+        <nav id="menu_superior_responsivo">
+            <ul>
+                <li>
+                    <a href="#link1">Texto do Link 1</a>
+                </li>
+                <li>
+                    <a href="#link2">Texto do Link 2</a>
+                </li>
+                <li>
+                    <a href="#link3">Texto do Link 3</a>
+                </li>
+                <li>
+                    <a href="#link4">Texto do Link 4</a>
+                </li>
+                <li>
+                    <a href="#link5">Texto do Link 5</a>
+                </li>
+                <li>
+                    <a href="#link6">Texto do Link 6</a>
+                </li>
+                <li>
+                    <a href="#link7">Texto do Link 7</a>
+                </li>
+                <li>
+                    <a href="#link8">Texto do Link 8</a>
+                </li>
+            </ul>
+        </nav>
+    </body>
+</html>
