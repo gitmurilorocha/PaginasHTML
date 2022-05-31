@@ -9,6 +9,8 @@ menu_dropdown_superior_simples_css.html - Menu dropdown superior simples feito c
 
 menu_responsivo_superior_css.html - Menu superior responsivo feito com o uso de HTML e CSS.
 
+menu_hamburger_superior_css.html - Menu superior do tipo hamburger feito com o uso de HTML e CSS.
+
 
 -----------------------------------------------------------
 Projeto criado com a utilização da IDE Apache NetBeans 12.6
