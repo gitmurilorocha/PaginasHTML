@@ -15,6 +15,8 @@ menu_responsivo_superior_hamburger_css.html - Menu superior responsivo (normal: 
 
 layout_duas_colunas.html - Layout de duas colunas com menu lateral feito com o uso de HTML e CSS.
 
+layout_tres_colunas.html - Layout de três colunas com menu superior feito com o uso de HTML e CSS.
+
 
 -----------------------------------------------------------
 Projeto criado com a utilização da IDE Apache NetBeans 12.6
