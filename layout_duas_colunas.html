@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<!--
+    Copyright 2022 Murilo Rocha
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    https://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<!--
+    Código para a demonstração do desenvolvimento de um layout de duas colunas com o uso de HTML e CSS.
+-->
+<html lang="pt-BR">
+    <head>
+        <title>Layout de duas colunas com CSS</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            html, body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                font-family: arial, helvetica, sans-serif;
+            }
+            div#corpo_pagina {
+                width: 100%;
+                min-height: 100%;
+                display: flex;
+                flex-direction: column;
+                background: #fff;
+            }
+            div#corpo_pagina header {
+                background: #0d5ea1;
+            }
+            div#corpo_pagina header h1 {
+                margin: 0;
+                padding: 1em;
+                font-size: 2em;
+                color: #fff;
+            }
+            div#corpo_pagina main {
+                min-height: 0;
+                display: flex;
+                flex: auto;
+                flex-wrap: wrap;
+                overflow:auto;
+                background: #ceecfa;
+            }
+            div#corpo_pagina aside {
+                max-height:100%;
+                padding: 1em;
+                float: left;
+                overflow: auto;
+                background: #93c3e6;
+            }
+            div#corpo_pagina aside nav#menu_lateral ul {
+                margin: 0;
+                padding: 0;
+            }
+            div#corpo_pagina aside nav#menu_lateral ul li {
+                list-style-type: none;
+                margin: 1em;
+            }
+            div#corpo_pagina aside nav#menu_lateral ul li a {
+                padding: 0.5em 1.5em;
+                display: inline-block;
+                text-align: left;
+                text-decoration: none;
+                font-size: 1em;
+                background: #077bba;
+                color: #fff;
+            }
+            div#corpo_pagina aside nav#menu_lateral ul li a:hover {
+                background: #1191d7;
+            }
+            div#corpo_pagina section {
+                flex: auto;
+                max-height:100%;
+                overflow: auto;
+                float: left;
+                padding: 1em;
+                background: #b4ddfa;
+            }
+            div#corpo_pagina section h2 {
+                padding: 0;
+                margin: 0;
+                font-size: 1.5em;
+                color: #12516b;
+            }
+            div#corpo_pagina footer {
+                bottom: 0;
+                width: 100%;
+                clear: both;
+                text-align: center;
+                background: #0d5ea1;
+            }
+            div#corpo_pagina footer p {
+                font-size: 1em;
+                color: #fff;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="corpo_pagina">
+            <header>
+                <h1>T&iacute;tulo da p&aacute;gina.</h1>
+            </header>
+            <main>
+                <aside>
+                    <nav id="menu_lateral">
+                        <ul>
+                            <li>
+                                <a href="#link1">Texto do Link 1</a>
+                            </li>
+                            <li>
+                                <a href="#link2">Texto do Link 2</a>
+                            </li>
+                            <li>
+                                <a href="#link3">Texto do Link 3</a>
+                            </li>
+                            <li>
+                                <a href="#link4">Texto do Link 4</a>
+                            </li>
+                            <li>
+                                <a href="#link5">Texto do Link 5</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </aside>
+                <section>
+                    <h2>Conteúdo da página.</h2>
+                </section>    
+            </main>
+            <footer>
+                <p>&copy; 2022 &ndash; Murilo Rocha</p>
+            </footer>
+        </div>
+    </body>
+</html>
