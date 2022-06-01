@@ -13,6 +13,8 @@ menu_hamburger_superior_css.html - Menu superior do tipo hamburger feito com o u
 
 menu_responsivo_superior_hamburger_css.html - Menu superior responsivo (normal: Telas maiores / hamburger: Telas menores) feito com o uso de HTML e CSS.
 
+layout_duas_colunas.html - Layout de duas colunas com menu lateral feito com o uso de HTML e CSS.
+
 
 -----------------------------------------------------------
 Projeto criado com a utilização da IDE Apache NetBeans 12.6
