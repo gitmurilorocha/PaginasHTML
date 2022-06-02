@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<!--
+    Copyright 2022 Murilo Rocha
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    https://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<!--
+    Código para a demonstração do desenvolvimento de um layout de três colunas responsivo com o uso de HTML e CSS.
+-->
+<html lang="pt-BR">
+    <head>
+        <title>Layout de tr&ecirc;s colunas responsivo com CSS</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            html, body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                font-family: arial, helvetica, sans-serif;
+            }
+            div#corpo_pagina {
+                width: 100%;
+                min-height: 100%;
+                display: flex;
+                flex-direction: column;
+                background: #fff;
+            }
+            div#corpo_pagina header {
+                background: #0d5ea1;
+            }
+            div#corpo_pagina header h1 {
+                margin: 0;
+                padding: 0.7em;
+                text-align: center;
+                font-size: 1.25em;
+                color: #fff;
+            }
+            div#corpo_pagina nav#menu_superior_responsivo_hamburger {
+                width: 100%;
+                background: #077bba;
+            }
+            div#corpo_pagina nav#menu_superior_responsivo_hamburger, div#corpo_pagina nav#menu_superior_responsivo_hamburger ul#itens_menu_hamburger, div#corpo_pagina nav#menu_superior_responsivo_hamburger ul#itens_menu_hamburger li {
+                margin: 0;
+                padding: 0;
+                line-height: 0;
+            }
+            div#corpo_pagina nav#menu_superior_responsivo_hamburger ul li {
+                list-style-type: none;
+            }
+            div#corpo_pagina nav#menu_superior_responsivo_hamburger ul li a {
+                display: block;
+                text-align: center;
+                text-decoration: none;
+                padding: 1.1em;
+                font-size: 0.85em;
+                background: #077bba;
+                color: #fff;
+            }
+            div#corpo_pagina nav#menu_superior_responsivo_hamburger ul li a:hover {
+                background: #1191d7;
+            }
+            div#corpo_pagina nav#menu_superior_responsivo_hamburger ul#itens_menu_hamburger {
+                max-height: 0;
+                transition: max-height 0.75s ease-out;
+                overflow: hidden;
+            }
+            div#corpo_pagina nav#menu_superior_responsivo_hamburger label#selecao_menu_hamburger {
+                background-image: url(imagens/menu_hamburger.png);
+                background-size: cover;
+                width: 1.5em;
+                height: 1.5em;
+                margin: 0.25em;
+                display: inline-block;
+                cursor: pointer;
+            }
+            div#corpo_pagina nav#menu_superior_responsivo_hamburger input#acionador_menu_hamburger {
+                display:none;
+            }
+            div#corpo_pagina nav#menu_superior_responsivo_hamburger input#acionador_menu_hamburger:checked ~ ul#itens_menu_hamburger {
+                max-height: 1000px;
+                transition: max-height 1s ease-in;
+            }
+            div#corpo_pagina nav#menu_superior_responsivo_hamburger input#acionador_menu_hamburger:checked + label#selecao_menu_hamburger {
+                background-image: url(imagens/fechar.png);
+            }
+            div#corpo_pagina main {
+                min-height: 0;
+                display: flex;
+                flex: auto;
+                flex-wrap: wrap;
+                overflow:auto;
+                background: #ceecfa;
+            }
+            div#corpo_pagina aside#conteudo_esquerda, div#corpo_pagina aside#conteudo_direita {
+                width: 100%;
+                max-height:100%;
+                padding: 0.7em 0.8em;
+                background: #93c3e6;
+            }
+            div#corpo_pagina aside#conteudo_esquerda p, div#corpo_pagina aside#conteudo_direita p {
+                margin: 0;
+                padding: 0;
+                text-align: left;
+                font-size: 0.9em;
+                color: #023147;
+            }
+            div#corpo_pagina section#conteudo_meio {
+                width: 100%;
+                max-height:100%;
+                padding: 0.7em 0.8em;
+                background: #b4ddfa;
+            }
+            div#corpo_pagina section#conteudo_meio h2 {
+                padding: 0;
+                margin: 0;
+                text-align: left;
+                font-size: 1em;
+                color: #12516b;
+            }
+            div#corpo_pagina footer {
+                bottom: 0;
+                width: 100%;
+                clear: both;
+                text-align: center;
+                background: #0d5ea1;
+            }
+            div#corpo_pagina footer p {
+                font-size: 0.7em;
+                color: #fff;
+            }
+            /* Telas maiores que 600px */
+            @media only screen and (min-width: 600px) {
+                div#corpo_pagina header h1 {
+                    padding: 0.8em;
+                    font-size: 1.5em;
+                }
+                div#corpo_pagina nav#menu_superior_responsivo_hamburger {
+                    width: 100%;
+                    text-align: left;
+                }
+                div#corpo_pagina nav#menu_superior_responsivo_hamburger ul#itens_menu_hamburger {
+                    display: inline-block;
+                }
+                div#corpo_pagina nav#menu_superior_responsivo_hamburger ul#itens_menu_hamburger li {
+                    float: left;
+                }
+                div#corpo_pagina nav#menu_superior_responsivo_hamburger ul#itens_menu_hamburger li a {
+                    padding: 1.15em 0.55em;
+                    font-size: 0.95em;
+                }
+                div#corpo_pagina nav#menu_superior_responsivo_hamburger label#selecao_menu_hamburger {
+                    display: none;
+                }
+                div#corpo_pagina nav#menu_superior_responsivo_hamburger ul#itens_menu_hamburger {
+                    max-height: 100%;
+                    overflow: visible;
+                }
+                div#corpo_pagina aside#conteudo_esquerda, div#corpo_pagina aside#conteudo_direita {
+                    width: auto;
+                    float: left;
+                    overflow: auto;
+                    padding: 0.8em 0.9em;
+                }
+                div#corpo_pagina aside#conteudo_esquerda p, div#corpo_pagina aside#conteudo_direita p {
+                    font-size: 0.92em;
+                }
+                div#corpo_pagina section#conteudo_meio {
+                    width: auto;
+                    float: left;
+                    flex: auto;
+                    overflow: auto;
+                    padding: 0.8em 0.9em;
+                }
+                div#corpo_pagina section#conteudo_meio h2 {
+                    text-align: center;
+                    font-size: 1.15em;
+                }
+                div#corpo_pagina footer p {
+                    font-size: 0.8em;
+                }
+            }
+            /* Telas maiores que 768px */
+            @media only screen and (min-width: 768px) {
+                div#corpo_pagina header h1 {
+                    padding: 0.9em;
+                    font-size: 1.75em;
+                }
+                div#corpo_pagina nav#menu_superior_responsivo_hamburger ul#itens_menu_hamburger li a {
+                    padding: 1.25em;
+                }
+                div#corpo_pagina aside#conteudo_esquerda, div#corpo_pagina aside#conteudo_direita {
+                    padding: 0.9em 1em;
+                }
+                div#corpo_pagina aside#conteudo_esquerda p, div#corpo_pagina aside#conteudo_direita p {
+                    font-size: 0.95em;
+                }
+                div#corpo_pagina section#conteudo_meio {
+                    padding: 0.9em 1em;
+                } 
+                div#corpo_pagina section#conteudo_meio h2 {
+                    font-size: 1.25em;
+                }
+                div#corpo_pagina footer p {
+                    font-size: 0.9em;
+                }
+            }
+            /* Telas maiores que 1024px */
+            @media only screen and (min-width: 1024px) {
+                div#corpo_pagina header h1 {
+                    padding: 1em;
+                    font-size: 2em;
+                }
+                div#corpo_pagina nav#menu_superior_responsivo_hamburger ul#itens_menu_hamburger li a {
+                    padding: 1.5em;
+                    font-size: 1em;
+                }
+                div#corpo_pagina aside#conteudo_esquerda, div#corpo_pagina aside#conteudo_direita {
+                    padding: 1em 1.25em;
+                }
+                div#corpo_pagina aside#conteudo_esquerda p, div#corpo_pagina aside#conteudo_direita p {
+                    font-size: 1em;
+                }
+                div#corpo_pagina section#conteudo_meio {
+                    padding: 1em 1.25em;
+                }  
+                div#corpo_pagina section#conteudo_meio h2 {
+                    font-size: 1.5em;
+                }
+                div#corpo_pagina footer p {
+                    font-size: 1em;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="corpo_pagina">
+            <header>
+                <h1>T&iacute;tulo da p&aacute;gina.</h1>
+            </header>
+            <nav id="menu_superior_responsivo_hamburger">
+                <input id="acionador_menu_hamburger" type="checkbox" />
+                <label id="selecao_menu_hamburger" for="acionador_menu_hamburger"></label>
+                <ul id="itens_menu_hamburger">
+                    <li>
+                        <a href="#link1">Texto do Link 1</a>
+                    </li>
+                    <li>
+                        <a href="#link2">Texto do Link 2</a>
+                    </li>
+                    <li>
+                        <a href="#link3">Texto do Link 3</a>
+                    </li>
+                    <li>
+                        <a href="#link4">Texto do Link 4</a>
+                    </li>
+                    <li>
+                        <a href="#link5">Texto do Link 5</a>
+                    </li>
+                </ul>
+            </nav>
+            <main>
+                <aside id="conteudo_esquerda">
+                    <p>Conte&uacute;do n&uacute;mero 1.</p>
+                </aside>
+                <section id="conteudo_meio">
+                    <h2>Conte&uacute;do central.</h2>
+                </section>    
+                <aside id="conteudo_direita">
+                    <p>Conte&uacute;do n&uacute;mero 2.</p>
+                </aside>
+            </main>
+            <footer>
+                <p>&copy; 2022 &ndash; Murilo Rocha</p>
+            </footer>
+        </div>
+    </body>
+</html>
