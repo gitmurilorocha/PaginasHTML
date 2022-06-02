@@ -6,6 +6,8 @@ Códigos para a demonstração de conhecimentos sobre o uso de HTML e CSS.
 Geral
 -----
 
+index.html - Página inicial para a organização do acesso aos exemplos de código.
+
 div_centralizado.html - Página com exemplo de uma centralização do elemento HTML div em uma página HTML.
 
 Menu
